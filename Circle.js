@@ -40,6 +40,7 @@ export class ProgressCircle extends Component {
     style: PropTypes.any,
     strokeCap: PropTypes.oneOf(['butt', 'square', 'round']),
     textStyle: PropTypes.any,
+    textStyleBottom: PropTypes.any,
     thickness: PropTypes.number,
     unfilledColor: PropTypes.string,
     endAngle: PropTypes.number,
@@ -96,6 +97,7 @@ export class ProgressCircle extends Component {
       style,
       strokeCap,
       textStyle,
+      textStyleBottom,
       thickness,
       unfilledColor,
       endAngle,
@@ -210,7 +212,7 @@ export class ProgressCircle extends Component {
             >
               {formatText(progressValue)}
             </Text>
-            <Text>
+            <Text style={[textStyleBottom]}>
               {formatText(progressValue)}
             </Text>
           </View>
