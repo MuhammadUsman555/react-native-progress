@@ -188,6 +188,7 @@ declare module 'react-native-progress' {
      * @default See source
      */
     formatText?: (progress: number) => void;
+    formatTextBottom?: (progress: number) => void;
 
     /**
      * Styles for progress text, defaults to a same `color` as circle and `fontSize` proportional to `size` prop.
@@ -197,6 +198,7 @@ declare module 'react-native-progress' {
      * @default None
      */
     textStyle?: TextStyle;
+    textStyleBottom?: TextStyle;
 
     /**
      * Whether or not to respect device font scale setting.

@@ -28,6 +28,7 @@ export class ProgressCircle extends Component {
     direction: PropTypes.oneOf(['clockwise', 'counter-clockwise']),
     fill: PropTypes.string,
     formatText: PropTypes.func,
+    formatTextBottom: PropTypes.func,
     indeterminate: PropTypes.bool,
     progress: PropTypes.oneOfType([
       PropTypes.number,
@@ -50,6 +51,7 @@ export class ProgressCircle extends Component {
     color: 'rgba(0, 122, 255, 1)',
     direction: 'clockwise',
     formatText: progress => `${Math.round(progress * 100)}%`,
+    formatTextBottom: '',
     progress: 0,
     showsText: false,
     size: 40,
@@ -85,6 +87,7 @@ export class ProgressCircle extends Component {
       direction,
       fill,
       formatText,
+      formatTextBottom,
       indeterminate,
       progress,
       rotation,
@@ -205,6 +208,9 @@ export class ProgressCircle extends Component {
               ]}
               allowFontScaling={allowFontScaling}
             >
+              {formatText(progressValue)}
+            </Text>
+            <Text>
               {formatText(progressValue)}
             </Text>
           </View>
